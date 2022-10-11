@@ -5,12 +5,66 @@
 
   font-family: "Noto Sans KR", sans-serif;
   font-size: 11px;
+  letter-spacing: 1px;
 }
 
 body,
 html {
   margin: 0px;
-  height: 100%;
+}
+
+input,
+select,
+textarea {
+  margin-bottom: 15px;
+  border: 1px solid rgb(198, 198, 198);
+  padding: 10px;
+
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid black;
+}
+
+@keyframes button-fadein {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: black;
+    text-decoration: underline;
+  }
+}
+@keyframes button-fadeout {
+  from {
+    background-color: black;
+    text-decoration: underline;
+  }
+  to {
+    background-color: white;
+  }
+}
+@keyframes black-button-fadein {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: rgb(100, 100, 100);
+    text-decoration: underline;
+  }
+}
+@keyframes black-button-fadeout {
+  from {
+    background-color: rgb(100, 100, 100);
+    text-decoration: underline;
+  }
+  to {
+    background-color: black;
+  }
 }
 
 button {
@@ -22,8 +76,24 @@ button {
   font-weight: 700;
   color: black;
   background-color: white;
+  animation: button-fadeout 0.1s linear forwards;
 
   cursor: pointer;
+}
+
+button:active {
+  animation: button-fadein 0.1s linear forwards;
+  color: white;
+}
+
+.black-button {
+  color: white;
+  background-color: black;
+  animation: black-button-fadeout 0.1s linear forwards;
+}
+
+.black-button:active {
+  animation: black-button-fadein 0.1s linear forwards;
 }
 
 a {
@@ -34,4 +104,14 @@ a {
 a:hover {
   font-weight: 700;
   text-decoration: underline;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main {
+  margin-top: 60px;
 }
